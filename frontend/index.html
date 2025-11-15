@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>PowerSage - Solar Feasibility</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>PowerSage Solar Feasibility</h1>
+    </header>
+
+
+    <section class="calculator">
+        <h2>Solar Feasibility Calculator</h2>
+
+
+        <label>Monthly Bill</label>
+        <input id="bill" type="number" />
+
+
+        <label>Consumption (kWh)</label>
+        <input id="consumption" type="number" />
+
+
+        <label>Roof Area (sqft)</label>
+        <input id="roof" type="number" />
+
+
+        <label>Tariff (₹/kWh)</label>
+        <input id="tariff" type="number" value="8" />
+
+
+        <button onclick="calculate()">Calculate</button>
+
+
+        <div id="result"></div>
+    </section>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
