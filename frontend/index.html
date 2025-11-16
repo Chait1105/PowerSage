@@ -1,46 +1,101 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 
 <head>
-    <meta charset="UTF-8" />
-    <title>PowerSage - Solar Feasibility</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="utf-8">
+    <title>PowerSage — Solar Feasibility Consulting</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
-    <header>
-        <h1>PowerSage Solar Feasibility</h1>
+    <header class="header">
+        <div class="container">
+            <div class="brand">
+                <div class="logo">PS</div>
+                <div>
+                    <div style="font-weight:700">PowerSage</div>
+                    <div style="font-size:13px;color:#64748b">Solar Feasibility Consulting</div>
+                </div>
+            </div>
+            <nav class="navlinks">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="projects.html">Projects</a>
+                <a href="calculator.html">Calculator</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <a class="cta" href="calculator.html">Get Feasibility</a>
+        </div>
     </header>
 
+    <main class="container">
+        <section class="hero">
+            <div>
+                <h1>Solar feasibility, engineered for real returns.</h1>
+                <p>PowerSage provides engineering-first feasibility reports, reliable ROI models, and
+                    implementation-ready recommendations for rooftops and industrial sites.</p>
+                <div style="margin-top:18px">
+                    <a class="cta" href="calculator.html">Calculate Feasibility</a>
+                    <a style="margin-left:12px;text-decoration:none;color:var(--muted)" href="contact.html">Request a
+                        report</a>
+                </div>
 
-    <section class="calculator">
-        <h2>Solar Feasibility Calculator</h2>
+                <div class="services" style="margin-top:22px">
+                    <div class="card service">
+                        <h4>Feasibility Study</h4>
+                        <p class="small">Energy audit, yield modeling, and subsidy guidance.</p>
+                    </div>
+                    <div class="card service">
+                        <h4>Shadow & Roof Analysis</h4>
+                        <p class="small">3D shadow mapping and structural checks.</p>
+                    </div>
+                    <div class="card service">
+                        <h4>Financing & ROI</h4>
+                        <p class="small">Payback models, financing options, and OPEX/CAPEX breakdown.</p>
+                    </div>
+                </div>
+            </div>
 
+            <aside class="card">
+                <h3 style="margin-top:0">Quick estimate</h3>
+                <p class="small">Use our quick feasibility tool — or go to the full calculator for a detailed report.
+                </p>
+                <div style="margin-top:12px">
+                    <a href="calculator.html" class="cta">Open Calculator</a>
+                </div>
+                <div style="margin-top:14px;color:var(--muted);font-size:13px">
+                    <div>320+ Projects delivered</div>
+                    <div style="margin-top:6px">Average payback: <strong>4.6 yrs</strong></div>
+                </div>
+            </aside>
+        </section>
 
-        <label>Monthly Bill</label>
-        <input id="bill" type="number" />
+        <section style="margin-top:28px">
+            <div class="card">
+                <h3 style="margin-top:0">Why PowerSage</h3>
+                <ul>
+                    <li>Engineering-first feasibility — not just sales quotes</li>
+                    <li>Detailed 48-hour feasibility reports</li>
+                    <li>Subsidy & net-metering guidance</li>
+                </ul>
+            </div>
+        </section>
+    </main>
 
+    <footer class="footer">
+        <div class="container">
+            <div>
+                <div style="font-weight:700">PowerSage</div>
+                <div class="small">Solar feasibility consulting — engineering-first reports.</div>
+            </div>
+            <div class="small">© <span id="year"></span> PowerSage</div>
+        </div>
+    </footer>
 
-        <label>Consumption (kWh)</label>
-        <input id="consumption" type="number" />
-
-
-        <label>Roof Area (sqft)</label>
-        <input id="roof" type="number" />
-
-
-        <label>Tariff (₹/kWh)</label>
-        <input id="tariff" type="number" value="8" />
-
-
-        <button onclick="calculate()">Calculate</button>
-
-
-        <div id="result"></div>
-    </section>
-
-
-    <script src="script.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>document.getElementById('year').innerText = new Date().getFullYear();</script>
 </body>
 
 </html>

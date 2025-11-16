@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>About — PowerSage</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="brand">
+                <div class="logo">PS</div>
+                <div>
+                    <div style="font-weight:700">PowerSage</div>
+                    <div style="font-size:13px;color:#64748b">Solar Feasibility Consulting</div>
+                </div>
+            </div>
+            <nav class="navlinks"><a href="index.html">Home</a><a href="about.html">About</a><a
+                    href="services.html">Services</a><a href="projects.html">Projects</a><a
+                    href="calculator.html">Calculator</a><a href="contact.html">Contact</a></nav>
+            <a class="cta" href="calculator.html">Get Feasibility</a>
+        </div>
+    </header>
+
+    <main class="container" style="padding-top:28px">
+        <div class="card">
+            <h2>About PowerSage</h2>
+            <p class="small">We are a solar feasibility consulting firm focused on delivering accurate, engineering-led
+                assessments and finance-ready reports for residential, commercial, and industrial projects.</p>
+
+            <h3 style="margin-top:18px">Our approach</h3>
+            <ol>
+                <li>Site assessment & consumption audit</li>
+                <li>Yield modeling (weather + irradiation)</li>
+                <li>Structural & shadow analysis</li>
+                <li>ROI modeling & subsidy guidance</li>
+            </ol>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div>
+                <div style="font-weight:700">PowerSage</div>
+                <div class="small">Solar feasibility consulting</div>
+            </div>
+            <div class="small">© <span id="year2"></span> PowerSage</div>
+        </div>
+    </footer>
+    <script src="assets/js/main.js"></script>
+    <script>document.getElementById('year2').innerText = new Date().getFullYear();</script>
+</body>
+
+</html>

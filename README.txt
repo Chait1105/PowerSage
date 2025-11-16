@@ -1,21 +1,10 @@
-PowerSage Fullstack Website
-==========================
+# PowerSage - Multi-page Fullstack (HTML + Node)
 
+## Overview
+Multi-page static frontend (HTML/CSS/JS) with a small Node.js/Express backend exposing `/api/feasibility`.
+Backend returns placeholder calculations (replace with ML model later).
 
-RUN BACKEND:
-------------
-cd backend
-npm install
-npm start
-Backend runs at http://localhost:5000
-
-
-RUN FRONTEND:
---------------
-Just open `frontend/index.html` in your browser.
-
-
-CONNECT TO ML MODEL LATER:
----------------------------
-Replace dummy logic inside:
-backend/controllers/feasibilityController.js
+## Run locally (Ubuntu / WSL)
+1. Open terminal and go to project folder:
+   ```bash
+   cd /path/to/PowerSage

@@ -1,0 +1,193 @@
+/* Basic responsive styles inspired by SolarLogix + SolarCellEnergy */
+:root {
+    --accent: #0ea5a4;
+    /* teal-ish */
+    --accent-dark: #0b7180;
+    --muted: #64748b;
+    --bg: #f8fafc;
+    --card: #ffffff;
+    --shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+    --radius: 12px;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: #0f172a;
+    line-height: 1.5;
+}
+
+/* container */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+/* NAV */
+.header {
+    background: #fff;
+    border-bottom: 1px solid #e6eef2;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.logo {
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #fde68a, #fb923c);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.navlinks a {
+    margin-left: 18px;
+    text-decoration: none;
+    color: #0f172a;
+    font-weight: 600
+}
+
+.cta {
+    background: var(--accent);
+    color: white;
+    padding: 10px 14px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* HERO */
+.hero {
+    padding: 48px 0;
+    display: grid;
+    grid-template-columns: 1fr 440px;
+    gap: 28px;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 34px;
+    margin: 0 0 12px;
+    font-weight: 800
+}
+
+.hero p {
+    color: var(--muted);
+    margin: 0 0 18px
+}
+
+/* Card */
+.card {
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 18px;
+}
+
+/* Services grid */
+.services {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 18px;
+}
+
+.service h4 {
+    margin: 0 0 8px
+}
+
+/* Projects grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px
+}
+
+/* Calculator page style */
+.calc-grid {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 20px
+}
+
+.input-group {
+    margin-bottom: 12px
+}
+
+.input-group label {
+    display: block;
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 6px
+}
+
+.input,
+select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #e6eef2
+}
+
+/* small screens */
+@media (max-width:900px) {
+    .hero {
+        grid-template-columns: 1fr
+    }
+
+    .services {
+        grid-template-columns: 1fr
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr
+    }
+
+    .calc-grid {
+        grid-template-columns: 1fr
+    }
+
+    .navlinks {
+        display: none
+    }
+}
+
+.footer {
+    background: #07172b;
+    color: #cbd5e1;
+    padding: 30px 0;
+    margin-top: 40px
+}
+
+.footer .container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between
+}
+
+.small {
+    font-size: 13px;
+    color: #94a3b8
+}

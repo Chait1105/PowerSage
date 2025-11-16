@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Calculator — PowerSage</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="brand">
+                <div class="logo">PS</div>
+                <div>
+                    <div style="font-weight:700">PowerSage</div>
+                    <div style="font-size:13px;color:#64748b">Solar Feasibility Consulting</div>
+                </div>
+            </div>
+            <nav class="navlinks"><a href="index.html">Home</a><a href="about.html">About</a><a
+                    href="services.html">Services</a><a href="projects.html">Projects</a><a
+                    href="calculator.html">Calculator</a><a href="contact.html">Contact</a></nav>
+            <a class="cta" href="contact.html">Request Report</a>
+        </div>
+    </header>
+
+    <main class="container" style="padding-top:28px">
+        <div class="card">
+            <h2>Solar Feasibility Calculator</h2>
+            <p class="small">Provide a few details and get an engineering-grade estimate. For a full ML-based report,
+                request a detailed feasibility report.</p>
+
+            <div class="calc-grid" style="margin-top:16px">
+                <div>
+                    <div class="input-group">
+                        <label>Monthly electricity bill (₹)</label>
+                        <input id="calc-bill" class="input" type="number" placeholder="e.g., 6000">
+                    </div>
+                    <div class="input-group">
+                        <label>Monthly consumption (kWh)</label>
+                        <input id="calc-consumption" class="input" type="number" placeholder="e.g., 450">
+                    </div>
+                    <div class="input-group">
+                        <label>Available roof area (sqft)</label>
+                        <input id="calc-roof" class="input" type="number" placeholder="e.g., 400">
+                    </div>
+                    <div class="input-group">
+                        <label>Location irradiation</label>
+                        <select id="calc-location" class="input">
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                            <option value="low">Low</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Tariff (₹ / kWh)</label>
+                        <input id="calc-tariff" class="input" type="number" value="8">
+                    </div>
+
+                    <div style="margin-top:12px;display:flex;gap:10px">
+                        <button id="calc-btn" class="cta">Calculate</button>
+                        <button id="calc-download"
+                            style="background:#fff;border:1px solid #e6eef2;padding:10px;border-radius:8px">Download
+                            JSON</button>
+                    </div>
+                </div>
+
+                <aside class="card">
+                    <div id="calc-result">Results appear here after calculation.</div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div>
+                <div style="font-weight:700">PowerSage</div>
+                <div class="small">Solar feasibility consulting</div>
+            </div>
+            <div class="small">© <span id="year5"></span> PowerSage</div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        document.getElementById('year5').innerText = new Date().getFullYear();
+        const calcBtn = document.getElementById('calc-btn');
+        const downloadBtn = document.getElementById('calc-download');
+        const resultEl = document.getElementById('calc-result');
+
+        calcBtn.addEventListener('click', async () => {
+            const payload = {
+                monthly_bill: Number(document.getElementById('calc-bill').value || 0),
+                consumption: Number(document.getElementById('calc-consumption').value || 0),
+                roof_area: Number(document.getElementById('calc-roof').value || 0),
+                location: document.getElementById('calc-location').value,
+                panel_efficiency: 0.18,
+                tariff: Number(document.getElementById('calc-tariff').value || 8)
+            };
+            await postFeasibility(payload, resultEl);
+        });
+
+        downloadBtn.addEventListener('click', () => {
+            const txt = resultEl.innerText || "No results";
+            const blob = new Blob([txt], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `powersage-estimate-${new Date().toISOString().slice(0, 10)}.txt`;
+            a.click();
+            URL.revokeObjectURL(url);
+        });
+    </script>
+</body>
+
+</html>
